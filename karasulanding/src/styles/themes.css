@@ -1,0 +1,89 @@
+:root {
+  --background: #E9E3DE;
+  --foreground: #161615;
+  --textblack: #161615;
+  --glass-foreground: #ffffff36;
+
+  --primary: #161615;
+  --primary-soft: #222120;
+  --neutral: #BEB8B1;
+  --surface: #F6F4F3;
+  --surface-soft: #E0E0E0;
+
+  --stroke: #161615;
+  --stroke-soft: #222120;
+  --stroke-neutral: #BEB8B1;
+  --stroke-light: #E9E3DE;
+
+  --hilight-red: #FF5656;
+  --hilight-blue: #4252FF;
+  --hilight-purple: #9F39EF;
+  --hilight-lavender: #9CA4FF;
+  --hilight-peach: #FFC29C;
+
+  --s-background: #F6F4F3;
+  --s-foreground: #161615;
+
+  --stroke-glass: #ffffff0e;
+  --background-code: #000000e0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-textblack: var(--textblack);
+  --color-glass-foreground: var(--glass-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-neutral: var(--neutral);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+
+  --color-stroke: var(--stroke);
+  --color-stroke-soft: var(--stroke-soft);
+  --color-stroke-neutral: var(--stroke-neutral);
+  --color-stroke-light: var(--stroke-light);
+
+  --color-hilight-red: var(--hilight-red);
+  --color-hilight-blue: var(--hilight-blue);
+  --color-hilight-purple: var(--hilight-purple);
+  --color-hilight-lavender: var(--hilight-lavender);
+  --color-hilight-peach: var(--hilight-peach);
+
+  --font-sans: var(--font-geist-sans);
+  --font-handjet: var(--font-Handjet);
+  --font-iceberg: var(--font-iceberg);
+  --font-baloo: var(--font-baloo);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #080808;
+    --foreground: #E9E3DE;
+    --textblack: #E9E3DE;
+    --glass-foreground: #ffffff36;
+
+    --primary: #E9E3DE;
+    --primary-soft: #E0E0E0;
+    --neutral: #BEB8B1;
+    --surface: #222120;
+    --surface-soft: #1B1A19;
+
+    --stroke: #E9E3DE;
+    --stroke-soft: #BEB8B1;
+    --stroke-neutral: #222120;
+    --stroke-light: #161615;
+
+    --s-background: #1B1A19;
+    --s-foreground: #E9E3DE;
+
+    --background-code: #070707;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
