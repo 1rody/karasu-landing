@@ -26,6 +26,7 @@
 
   --stroke-glass: #ffffff0e;
   --background-code: #000000e0;
+
 }
 
 @theme inline {
@@ -79,6 +80,7 @@
     --s-foreground: #E9E3DE;
 
     --background-code: #070707;
+
   }
 }
 
