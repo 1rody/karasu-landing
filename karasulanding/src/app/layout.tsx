@@ -27,7 +27,7 @@ const icebergFont = Iceberg({
 export const metadata: Metadata = {
   title: "Deploy your World.",
   description:
-    "Developed by Rodolfo falcao, with figma, nextjs, tailwindcss and other technologies...",
+    "Developed ",
 };
 
 export default function RootLayout({

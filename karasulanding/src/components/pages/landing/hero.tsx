@@ -18,7 +18,8 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <div>
-                    <img className="absolute top-0 -right-110" src="/assets/backgrounds/Crow_dark.png" alt="Hero Crow" />
+                    <img className="absolute top-0 -right-110 dark:hidden" src="/assets/backgrounds/Crow_light.png" alt="Hero Crow" />
+                    <img className="absolute top-0 -right-110 hidden dark:block" src="/assets/backgrounds/Crow_dark.png" alt="Hero Crow" />
                 </div>
             </section>  
         </>
