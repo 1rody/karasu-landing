@@ -25,9 +25,9 @@ const icebergFont = Iceberg({
 });
 
 export const metadata: Metadata = {
-  title: "Deploy your World.",
+  title: "Karasu — Security that watches while you sleep",
   description:
-    "Developed ",
+    "front-end by rody",
 };
 
 export default function RootLayout({
