@@ -19,3 +19,18 @@
     padding: 0.5rem 1rem;
     
 }
+.tertiary-btn {
+    transition: .2s;
+    padding: 0.5rem 1rem;
+    border-bottom: 5px solid var(--stroke);
+    background-color: var(--stroke-soft);
+    font-weight: 600;
+    &:hover {
+        margin-top: 3px;
+        border-bottom: 2px solid var(--stroke);
+    }
+    &:active {
+        margin-top: 3px;
+        border-bottom: 2px solid var(--stroke);
+    }
+}
