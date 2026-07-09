@@ -37,8 +37,12 @@ export default function NavLanding() {
             />
 
             <nav className="w-full flex items-center justify-between font-(family-name:--font-Handjet)">
-                <span className="select-none text-lg">—</span>
-                <div className="relative flex items-center justify-center min-w-[120px] h-8">
+                <span className="select-none text-lg hidden md:flex lg:flex sm:flex">—</span>
+                <div className="relative flex items-center justify-center md:hidden h-8">
+                    <img src="/assets/icons/karasuDarkSolid.png" alt="karasu" width={32} height={32} className="dark:hidden" />
+                    <img src="/assets/icons/karasuLightSolid.png" alt="karasu" width={32} height={32} className="hidden dark:block" />
+                </div>
+                <div className="relative items-center justify-center min-w-[120px] hidden md:flex lg:flex sm:flex h-8">
                     <AnimatePresence mode="wait" initial={false}>
                         {!scrolled ? (
                             <motion.div
@@ -77,8 +81,8 @@ export default function NavLanding() {
                     <span className="select-none text-lg">—</span>
                 </div>
 
-                <span className="text-lg font-geist-mono italic">{time ? time.toLocaleTimeString() : "--:--:--"}</span>
-                <span className="select-none text-lg">—</span>
+                <span className="text-lg font-geist-mono italic hidden md:flex lg:flex sm:flex">{time ? time.toLocaleTimeString() : "--:--:--"}</span>
+                <span className="select-none text-lg hidden md:flex lg:flex sm:flex">—</span>
             </nav>
         </motion.header>
     );

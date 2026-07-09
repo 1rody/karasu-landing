@@ -1,7 +1,42 @@
 :root {
   --super-large-text: 18rem;
   --super-large-text-secondary: 6rem;
-
   --large-text: 4rem;
   --small-text: 1.2rem;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --super-large-text: 14rem;
+    --super-large-text-secondary: 5rem;
+    --large-text: 3.5rem;
+    --small-text: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --super-large-text: 10rem;
+    --super-large-text-secondary: 4rem;
+    --large-text: 3rem;
+    --small-text: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --super-large-text: 5.5rem;
+    --super-large-text-secondary: 2.6rem;
+    --large-text: 2.2rem;
+    --small-text: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --super-large-text: 3.2rem;
+    --super-large-text-secondary: 1.9rem;
+    --large-text: 1.7rem;
+    --small-text: 0.9rem;
+  }
 }

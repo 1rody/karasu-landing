@@ -6,13 +6,11 @@
 
 
 @keyframes anim-bg-selection {
-    0%   { transform: scaleX(0); }
-    60%  { transform: scaleX(1); }
-    70%  { transform: scaleX(1); }
-    90% { transform: scaleX(1); }
-    100% { opacity: 0; transform: scaleX(0); }
+    0%     { transform: scaleX(0); opacity: 1; }  
+    16.6%  { transform: scaleX(1); opacity: 1; }  
+    83.3%  { transform: scaleX(1); opacity: 1; } 
+    100%   { transform: scaleX(1); opacity: 0; }  
 }
-
 
 .anim-bg-selection {
     position: relative;
@@ -22,9 +20,9 @@
     content: "";
     position: absolute;
     inset: 0 -0.1em;
-    background-color: var(--color-hilight-purple);  
+    background-color: var(--color-hilight-purple);
     transform: scaleX(0);
-    transform-origin: left;      
-    z-index: -1;                
-    animation: anim-bg-selection 8s ease-in-out infinite;
+    transform-origin: left;
+    z-index: -1;
+    animation: anim-bg-selection 5s ease-in-out infinite;
 }

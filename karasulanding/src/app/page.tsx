@@ -5,6 +5,7 @@ import NavLanding from "../components/layout/navbars";
 import HeroSection from "../components/pages/landing/hero";
 import Featured from "../components/pages/landing/featured";
 import AboutSection from "../components/pages/landing/about";
+import ContactSection from "../components/pages/landing/contact";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection/>
       <Featured/>
       <AboutSection/>
+      <ContactSection/>
     </>
   );
 }
