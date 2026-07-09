@@ -7,7 +7,7 @@ export default function HeroSection() {
                 <div className="flex flex-col p-10 text-left">
                     <div className="flex flex-col  text-left">
                         <p className="text-right text-2xl"><span className="font-bold bg-(--color-hilight-purple)">Security</span> that watches while you sleep</p>
-                        <h1 className="leading-none text-(length:--super-large-text) font-bold font-(family-name:--font-Handjet)">
+                        <h1 className="leading-none  text-(length:--super-large-text) font-bold font-(family-name:--font-Handjet)">
                         KARASU
                         </h1>                        
                         <h2 className="text-md text-(--neutral) font-bold">

@@ -18,12 +18,12 @@ export default function Featured() {
                     <img className="hidden dark:block" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
                 <div className="flex flex-col -mt-25 z-10  p-10 h-screen w-full text-left bg-(--foreground)">
                     <div className="flex mb-40 gap-4 w-full p-5 justify-around items-center">
-                        <h2 className="text-black text-2xl font-bold">WHAT WE OPERATE</h2>
+                        <h2 className="text-(--background) text-2xl font-bold">WHAT WE OPERATE</h2>
                         <div className="flex gap-4 justify-center gap-5 items-center">
                             <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="dark:invert-100" />
-                            <div class flex flex-col text-end items-end gap-5> 
+                            <div > 
                                     <img src="/assets/misc/assets-1.png" alt="karasu" width={120} height={32} className="dark:invert-100 ml-124" />
-                                    <p className="text-black text-2xl font-bold">
+                                    <p className="text-(--background) text-2xl font-bold">
                                         Lorem ypsun salut nomet drosdon hepets, nomis inup
                                     </p>
                                     <div className="flex items-center justify-end gap-5 mt-10">

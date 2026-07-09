@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ViewTransition } from 'react'
+
 import { Geist, Handjet, Baloo_2, Iceberg } from "next/font/google";
 import "@/src/styles/globals.css";
 
@@ -36,11 +38,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${HandjetFont.variable} ${baloo2.variable} ${icebergFont.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${geistSans.variable} ${HandjetFont.variable} ${baloo2.variable} ${icebergFont.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">
+        <ViewTransition update="page">
+          {children}
+        </ViewTransition>
+      </body>
     </html>
   );
 }
