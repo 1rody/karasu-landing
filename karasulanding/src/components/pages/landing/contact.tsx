@@ -4,12 +4,39 @@ import { useState } from "react";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+const DIAL_CODES = [
+    { code: "+55", flag: "🇧🇷", label: "BR" },
+    { code: "+1", flag: "🇺🇸", label: "US/CA" },
+    { code: "+44", flag: "🇬🇧", label: "UK" },
+    { code: "+351", flag: "🇵🇹", label: "PT" },
+    { code: "+34", flag: "🇪🇸", label: "ES" },
+    { code: "+33", flag: "🇫🇷", label: "FR" },
+    { code: "+49", flag: "🇩🇪", label: "DE" },
+    { code: "+39", flag: "🇮🇹", label: "IT" },
+    { code: "+31", flag: "🇳🇱", label: "NL" },
+    { code: "+41", flag: "🇨🇭", label: "CH" },
+    { code: "+353", flag: "🇮🇪", label: "IE" },
+    { code: "+52", flag: "🇲🇽", label: "MX" },
+    { code: "+54", flag: "🇦🇷", label: "AR" },
+    { code: "+56", flag: "🇨🇱", label: "CL" },
+    { code: "+57", flag: "🇨🇴", label: "CO" },
+    { code: "+351", flag: "🇦🇴", label: "AO" },
+    { code: "+61", flag: "🇦🇺", label: "AU" },
+    { code: "+81", flag: "🇯🇵", label: "JP" },
+    { code: "+82", flag: "🇰🇷", label: "KR" },
+    { code: "+86", flag: "🇨🇳", label: "CN" },
+    { code: "+91", flag: "🇮🇳", label: "IN" },
+    { code: "+971", flag: "🇦🇪", label: "AE" },
+    { code: "+972", flag: "🇮🇱", label: "IL" },
+    { code: "+27", flag: "🇿🇦", label: "ZA" },
+];
+
 export default function ContactSection() {
-    const [form, setForm] = useState({ fullName: "", email: "", phone: "", message: "" });
+    const [form, setForm] = useState({ fullName: "", email: "", dialCode: "+55", phone: "", message: "" });
     const [status, setStatus] = useState<Status>("idle");
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -20,11 +47,16 @@ export default function ContactSection() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+                body: JSON.stringify({
+                    fullName: form.fullName,
+                    email: form.email,
+                    phone: form.phone ? `${form.dialCode} ${form.phone}` : "",
+                    message: form.message,
+                }),
             });
             if (!res.ok) throw new Error("request failed");
             setStatus("sent");
-            setForm({ fullName: "", email: "", phone: "", message: "" });
+            setForm({ fullName: "", email: "", dialCode: "+55", phone: "", message: "" });
         } catch {
             setStatus("error");
         }
@@ -51,9 +83,17 @@ export default function ContactSection() {
                 </div>
                 <div className="flex flex-col gap-1.5">
                     <label htmlFor="phone" className="text-[0.7rem] uppercase tracking-[0.15em] opacity-55">Phone <span className="opacity-50">· optional</span></label>
-                    <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
-                        placeholder="(11) 91234-5678"
-                        className={inputClass} />
+                    <div className="flex items-center gap-2 border-b border-current/25 focus-within:border-current transition-colors duration-200">
+                        <select name="dialCode" aria-label="Country code" value={form.dialCode} onChange={handleChange}
+                            className="bg-transparent py-2 pr-1 text-base md:text-lg outline-none cursor-pointer [&>option]:text-black">
+                            {DIAL_CODES.map((c) => (
+                                <option key={`${c.code}-${c.label}`} value={c.code}>{c.flag} {c.code}</option>
+                            ))}
+                        </select>
+                        <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
+                            placeholder="(11) 91234-5678"
+                            className="w-full bg-transparent py-2 text-base md:text-lg outline-none placeholder:opacity-30" />
+                    </div>
                 </div>
             </div>
 

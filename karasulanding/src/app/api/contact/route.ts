@@ -12,6 +12,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export async function POST(request: Request) {
     const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
     if (!webhookUrl) {
+        console.error("[contact] DISCORD_WEBHOOK_URL is not set");
         return NextResponse.json(
             { error: "Contact endpoint is not configured." },
             { status: 500 }
@@ -68,12 +69,15 @@ export async function POST(request: Request) {
         });
 
         if (!res.ok) {
+            const detail = await res.text().catch(() => "");
+            console.error(`[contact] Discord webhook failed: ${res.status} ${detail}`);
             return NextResponse.json(
                 { error: "Failed to deliver message." },
                 { status: 502 }
             );
         }
-    } catch {
+    } catch (err) {
+        console.error("[contact] Discord webhook request threw:", err);
         return NextResponse.json(
             { error: "Failed to deliver message." },
             { status: 502 }

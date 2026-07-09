@@ -77,8 +77,8 @@ export default function AboutSection() {
                                     <span className="ml-4 transition-transform duration-300 group-open:rotate-45">+</span>
                                 </summary>
                                 <p className="mt-3 text-(--background)/70 leading-relaxed">
-                                    A technical report with reproducible proof of exploitation, an executive summary for
-                                    leadership, a prioritized remediation plan, and a follow-up validation to confirm the
+                                    A technical report with reproducible proof of exploitation, an C-Level summary,
+                                    a prioritized remediation plan, and a follow-up validation to confirm the
                                     issues were effectively closed.
                                 </p>
                             </details>
