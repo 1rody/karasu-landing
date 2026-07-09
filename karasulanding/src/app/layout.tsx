@@ -37,7 +37,7 @@ const barcodeFont = Libre_Barcode_39({
 export const metadata: Metadata = {
   title: "Karasu — Security that watches while you sleep",
   description:
-    "front-end by rody",
+    "Karasu is a cybersecurity company that provides offensive and defensive security services, including red teaming, blue teaming, penetration testing, SOC operations, threat intelligence, risk assessment, security research, and incident response.",
 };
 
 export default function RootLayout({

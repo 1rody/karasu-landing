@@ -42,7 +42,7 @@ const cards = [
 ];
 
 const CARD_BG_DARK = "/assets/backgrounds/CardkDark.svg";
-const CARD_BG_LIGHT = "/assets/backgrounds/CardkLight.svg";
+const CARD_BG_LIGHT = "/assets/backgrounds/CardLight.svg";
 
 const swiperBreakpoints = {
     0: { slidesPerView: 1.3, spaceBetween: 12 },

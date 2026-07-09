@@ -1,6 +1,7 @@
 .primary-btn {
     transition: .2s;
     padding: 0.5rem 1rem;
+    color: black;
     border-bottom: 5px solid var(--dark-purple);
     background-color: var(--hilight-purple);
     font-weight: 600;

@@ -6,7 +6,7 @@ export default function HeroSection() {
             <section className="h-screen w-full overflow-hidden relative justify-around items-center flex">
                 <div className="flex flex-col p-6 sm:p-8 md:p-10 text-left max-w-2xl z-10">
                     <div className="flex flex-col text-left">
-                        <p className="text-right text-lg sm:text-xl md:text-2xl"><span className="font-bold anim-bg-selection">Security</span> that watches while you sleep</p>
+                        <p className="text-right text-lg sm:text-xl md:text-2xl"><span className="font-bold anim-bg-selection" data-text="Security">Security</span> that watches while you sleep</p>
                         <h1 className="leading-none text-(length:--super-large-text) font-bold font-(family-name:--font-Handjet)">
                         KARASU
                         </h1>

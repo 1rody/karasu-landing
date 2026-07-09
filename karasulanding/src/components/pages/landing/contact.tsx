@@ -87,7 +87,7 @@ export default function ContactSection() {
                         <select name="dialCode" aria-label="Country code" value={form.dialCode} onChange={handleChange}
                             className="bg-transparent py-2 pr-1 text-base md:text-lg outline-none cursor-pointer [&>option]:text-black">
                             {DIAL_CODES.map((c) => (
-                                <option key={`${c.code}-${c.label}`} value={c.code}>{c.flag} {c.code}</option>
+                                <option key={`${c.code}-${c.label}`} value={c.code}>{c.code} · {c.label}</option>
                             ))}
                         </select>
                         <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
@@ -115,7 +115,7 @@ export default function ContactSection() {
                 <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 font-semibold text-white bg-(--hilight-purple) border-b-4 border-(--dark-purple) transition duration-200 hover:brightness-110 hover:mt-[7px] hover:border-b-2 active:mt-[7px] active:border-b-2 disabled:opacity-60 disabled:pointer-events-none"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 font-semibold bg-(--hilight-purple) border-b-4 border-(--dark-purple) transition duration-200 hover:brightness-110 hover:mt-[7px] hover:border-b-2 active:mt-[7px] active:border-b-2 disabled:opacity-60 disabled:pointer-events-none"
                 >
                     {status === "sending" ? "SENDING…" : "SEND"} <span aria-hidden>→</span>
                 </button>
