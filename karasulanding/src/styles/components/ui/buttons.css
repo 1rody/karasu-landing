@@ -34,3 +34,65 @@
         border-bottom: 2px solid var(--stroke);
     }
 }
+
+.primary-btn,
+.secondary-btn,
+.tertiary-btn,
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-btn::before,
+.secondary-btn::before,
+.tertiary-btn::before,
+button::before {
+    content: "@#$%&*@#$%&";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: inherit;
+    font-weight: inherit;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    text-shadow: 2px 0 var(--hilight-red), -2px 0 var(--hilight-blue);
+}
+
+button::before,
+.primary-btn::before {
+    background-color: var(--hilight-purple);
+    color: #ffffff;
+}
+
+.tertiary-btn::before {
+    background-color: var(--stroke-soft);
+    color: var(--stroke);
+}
+
+.secondary-btn::before {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.primary-btn:hover::before,
+.secondary-btn:hover::before,
+.tertiary-btn:hover::before,
+button:hover::before {
+    animation: glitch-symbols 0.5s steps(1, end) both;
+}
+
+@keyframes glitch-symbols {
+    0%   { opacity: 0; content: "@#$%&*@#$%&"; transform: translate(0, 0); }
+    10%  { opacity: 1; content: "@#$%&*@#$%&"; transform: translate(-2px, 1px) skewX(-4deg); }
+    22%  { opacity: 0; }
+    34%  { opacity: 1; content: "%$#@!*&%$#@"; transform: translate(2px, -1px) skewX(4deg); }
+    46%  { opacity: 0; }
+    58%  { opacity: 1; content: "#@%$*&#@%$*"; transform: translate(-1px, 0); }
+    70%  { opacity: 0; }
+    82%  { opacity: 1; content: "&*@#$%!@#$%"; transform: translate(1px, 0); }
+    100% { opacity: 0; }
+}

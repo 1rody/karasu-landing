@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-// Um único array: todos os 8 cards usam o mesmo fundo e têm texto custom.
 const cards = [
     {
         title: "Red Team",
@@ -42,11 +41,9 @@ const cards = [
     },
 ];
 
-// Backgrounds compartilhados por todos os cards
 const CARD_BG_DARK = "/assets/backgrounds/CardkDark.svg";
 const CARD_BG_LIGHT = "/assets/backgrounds/CardkLight.svg";
 
-// Menos cards no mobile, escalando até 5 no desktop
 const swiperBreakpoints = {
     0: { slidesPerView: 1.3, spaceBetween: 12 },
     640: { slidesPerView: 2.5, spaceBetween: 16 },
@@ -55,8 +52,6 @@ const swiperBreakpoints = {
 
 export default function Featured() {
 
-    // Reaproveita o mesmo bloco de card nos dois swipers (claro/escuro).
-    // @container + unidades cqw => o card escala junto (texto incluso) no mobile.
     const renderSlides = (bg: string) =>
         cards.map((card, index) => (
             <SwiperSlide key={index}>
@@ -83,7 +78,7 @@ export default function Featured() {
             <section className=" w-full overflow-hidden items-center flex flex-col">
                     <img className=" dark:hidden" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
                     <img className="hidden dark:block" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
-                <div className="flex flex-col -mt-8 sm:-mt-16 md:-mt-25 z-10 p-6 md:p-10 w-full text-left bg-(--foreground)">
+                <div className="flex flex-col -mt-3 sm:-mt-10 md:-mt-25 z-10 p-6 md:p-10 w-full text-left bg-(--foreground)">
                     <div className="flex flex-col md:flex-row mb-16 md:mb-40 gap-8 md:gap-4 w-full p-2 md:p-5 justify-around items-center">
                         <h2 className="text-(--background) text-2xl font-bold text-center md:text-left">WHAT WE OPERATE</h2>
                         <div className="flex gap-2 justify-center items-center">
@@ -131,8 +126,8 @@ export default function Featured() {
                         </div>
                     </div>
                 </div>
-                    <img className=" dark:hidden -mt-10 sm:-mt-20 md:-mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
-                    <img className="hidden dark:block -mt-10 sm:-mt-20 md:-mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
+                    <img className=" dark:hidden -mt-4 sm:-mt-12 md:-mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
+                    <img className="hidden dark:block -mt-4 sm:-mt-12 md:-mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
             </section>
         </>
     )

@@ -94,8 +94,8 @@ export default function Footer() {
 
                     <div className="flex flex-col gap-4">
                         <span className="text-xs uppercase tracking-[0.2em] text-(--background)/40">Get in touch</span>
-                        <a href="mailto:contact@karasu.security" className="text-sm transition-opacity hover:opacity-60 break-all">
-                            contact@karasu.security
+                        <a href="mailto:contact@karasu.sh" className="text-sm transition-opacity hover:opacity-60 break-all">
+                            contact@karasu.sh
                         </a>
                         <p className="text-sm text-(--background)/70">Available 24/7 for incident response.</p>
                     </div>
