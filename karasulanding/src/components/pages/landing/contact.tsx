@@ -2,16 +2,32 @@
 
 import { useState } from "react";
 
+type Status = "idle" | "sending" | "sent" | "error";
+
 export default function ContactSection() {
     const [form, setForm] = useState({ fullName: "", email: "", phone: "", message: "" });
+    const [status, setStatus] = useState<Status>("idle");
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(form);
+        if (status === "sending") return;
+        setStatus("sending");
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+            if (!res.ok) throw new Error("request failed");
+            setStatus("sent");
+            setForm({ fullName: "", email: "", phone: "", message: "" });
+        } catch {
+            setStatus("error");
+        }
     };
 
     const inputClass =
@@ -48,12 +64,22 @@ export default function ContactSection() {
                     className="w-full resize-none rounded-xl bg-current/5 border border-current/15 p-3 text-base outline-none transition-colors duration-200 placeholder:opacity-30 focus:border-current/40 focus:bg-current/10" />
             </div>
 
-            <button
-                type="submit"
-                className="self-end mt-1 inline-flex items-center gap-2 px-6 py-2.5 font-semibold text-white bg-(--hilight-purple) border-b-4 border-(--dark-purple) transition duration-200 hover:brightness-110 hover:mt-[7px] hover:border-b-2 active:mt-[7px] active:border-b-2"
-            >
-                SEND <span aria-hidden>→</span>
-            </button>
+            <div className="flex items-center justify-between gap-4 mt-1">
+                <span
+                    aria-live="polite"
+                    className={`text-sm ${status === "error" ? "text-(--hilight-red)" : "opacity-70"}`}
+                >
+                    {status === "sent" && "Message sent — we'll be in touch."}
+                    {status === "error" && "Something went wrong. Try again."}
+                </span>
+                <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="inline-flex items-center gap-2 px-6 py-2.5 font-semibold text-white bg-(--hilight-purple) border-b-4 border-(--dark-purple) transition duration-200 hover:brightness-110 hover:mt-[7px] hover:border-b-2 active:mt-[7px] active:border-b-2 disabled:opacity-60 disabled:pointer-events-none"
+                >
+                    {status === "sending" ? "SENDING…" : "SEND"} <span aria-hidden>→</span>
+                </button>
+            </div>
         </form>
     );
 
