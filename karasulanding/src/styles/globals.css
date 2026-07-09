@@ -3,3 +3,28 @@
 @import "./themes.css";
 @import "./mediaScreens.css";
 @import "./components/ui/buttons.css";
+
+
+@keyframes anim-bg-selection {
+    0%   { transform: scaleX(0); }
+    60%  { transform: scaleX(1); }
+    70%  { transform: scaleX(1); }
+    90% { transform: scaleX(1); }
+    100% { opacity: 0; transform: scaleX(0); }
+}
+
+
+.anim-bg-selection {
+    position: relative;
+    display: inline;
+}
+.anim-bg-selection::before {
+    content: "";
+    position: absolute;
+    inset: 0 -0.1em;
+    background-color: var(--color-hilight-purple);  
+    transform: scaleX(0);
+    transform-origin: left;      
+    z-index: -1;                
+    animation: anim-bg-selection 8s ease-in-out infinite;
+}

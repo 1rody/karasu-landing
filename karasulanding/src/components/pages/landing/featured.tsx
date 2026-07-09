@@ -6,25 +6,92 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
+// Um único array: todos os 8 cards usam o mesmo fundo e têm texto custom.
+const cards = [
+    {
+        title: "Red Team",
+        text: "We simulate real attacks to expose vulnerabilities before an intruder finds them.",
+    },
+    {
+        title: "Blue Team",
+        text: "Active defense that monitors, detects and neutralizes threats across your infrastructure in real time.",
+    },
+    {
+        title: "Penetration Test",
+        text: "Intrusion tests that find and prove exploitable flaws in your systems.",
+    },
+    {
+        title: "SOC Operations",
+        text: "24/7 monitoring of your environment, with continuous threat detection and response.",
+    },
+    {
+        title: "Intel",
+        text: "Actionable threat intelligence that anticipates risks and maps who, how and why they attack you.",
+    },
+    {
+        title: "Risk Assessment",
+        text: "A full assessment of your risks, prioritizing what truly matters to protect first.",
+    },
+    {
+        title: "Security Research",
+        text: "Cutting-edge research into new flaws and techniques to keep you one step ahead.",
+    },
+    {
+        title: "Incident Response",
+        text: "Fast incident response: containment, investigation and recovery to reduce impact.",
+    },
+];
+
+// Backgrounds compartilhados por todos os cards
+const CARD_BG_DARK = "/assets/backgrounds/CardkDark.svg";
+const CARD_BG_LIGHT = "/assets/backgrounds/CardkLight.svg";
+
+// Menos cards no mobile, escalando até 5 no desktop
+const swiperBreakpoints = {
+    0: { slidesPerView: 1.3, spaceBetween: 12 },
+    640: { slidesPerView: 2.5, spaceBetween: 16 },
+    1024: { slidesPerView: 5, spaceBetween: 20 },
+};
 
 export default function Featured() {
 
-    const cards = [1, 2, 3, <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrTE8ay_bHBVrLjPbCq6iUYGM6YM9mRrFm_oQSVLT3iw&s=10" alt="Card Image" />, 5, 6, 7, 8];
+    // Reaproveita o mesmo bloco de card nos dois swipers (claro/escuro).
+    // @container + unidades cqw => o card escala junto (texto incluso) no mobile.
+    const renderSlides = (bg: string) =>
+        cards.map((card, index) => (
+            <SwiperSlide key={index}>
+                <div className="@container relative w-full aspect-[7/4] rounded-2xl overflow-hidden ">
+                    <img
+                        src={bg}
+                        alt="Card Image"
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="relative z-10 flex flex-col justify-end h-full p-[7cqw] text-left">
+                        <h3 className="text-[9cqw] font-bold leading-tight text-(--foreground)">
+                            {card.title}
+                        </h3>
+                        <p className="mt-[3cqw] text-[4.5cqw] leading-snug text-(--foreground)/80">
+                            {card.text}
+                        </p>
+                    </div>
+                </div>
+            </SwiperSlide>
+        ));
 
     return (
         <>
-            <section className="h-screen w-full overflow-hidden items-center flex flex-col">
+            <section className=" w-full overflow-hidden items-center flex flex-col">
                     <img className=" dark:hidden" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
                     <img className="hidden dark:block" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
-                <div className="flex flex-col -mt-25 z-10  p-10 h-screen w-full text-left bg-(--foreground)">
+                <div className="flex flex-col -mt-25 z-10  p-10 w-full text-left bg-(--foreground)">
                     <div className="flex mb-40 gap-4 w-full p-5 justify-around items-center">
                         <h2 className="text-(--background) text-2xl font-bold">WHAT WE OPERATE</h2>
                         <div className="flex gap-4 justify-center gap-5 items-center">
                             <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="dark:invert-100" />
-                            <div > 
+                            <div >
                                     <img src="/assets/misc/assets-1.png" alt="karasu" width={120} height={32} className="dark:invert-100 ml-124" />
-                                    <p className="text-(--background) text-2xl font-bold">
-                                        Lorem ypsun salut nomet drosdon hepets, nomis inup
+                                    <p className="text-(--background) text-xl text-right font-bold">
+                                        Offensive and defensive operations that shield your company before, during and <br></br> after every attack.
                                     </p>
                                     <div className="flex items-center justify-end gap-5 mt-10">
                                         <button className="primary-btn"><Link href="/get-started">BOOK A BRIEFING </Link></button>
@@ -33,25 +100,36 @@ export default function Featured() {
                             </div>
                         </div>
                     </div>
-                        <div className="swipe-container flex">
+                    <div className="flex flex-col gap-10 mb-50 ">
+                        <div className="swipe-container dark:hidden flex">
                             <Swiper
                                 modules={[Autoplay]}
                                 slidesPerView={5}
                                 spaceBetween={20}
+                                breakpoints={swiperBreakpoints}
                                 loop={true}
                                 grabCursor={true}
                                 autoplay={{ delay: 2000, disableOnInteraction: false }}
                                 className="mySwiper"
                             >
-                                {cards.map((card, index) => (
-                                    <SwiperSlide key={index}>
-                                        <div className="h-64 bg-slate-800 text-white flex items-center justify-center rounded-2xl text-6xl font-black shadow-lg select-none border border-slate-700">
-                                            {card}
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
+                                {renderSlides(CARD_BG_LIGHT)}
                             </Swiper>
                         </div>
+                        <div className="swipe-container dark:flex hidden flex">
+                            <Swiper
+                                modules={[Autoplay]}
+                                slidesPerView={5}
+                                spaceBetween={20}
+                                breakpoints={swiperBreakpoints}
+                                loop={true}
+                                grabCursor={true}
+                                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                                className="mySwiper"
+                            >
+                                {renderSlides(CARD_BG_DARK)}
+                            </Swiper>
+                        </div>
+                    </div>
                 </div>
                     <img className=" dark:hidden -mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
                     <img className="hidden dark:block  -mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
@@ -59,4 +137,3 @@ export default function Featured() {
         </>
     )
 }
-

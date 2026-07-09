@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ViewTransition } from 'react'
 
+import SmoothScroll from '@/src/components/ui/smoothScroll';
+
 import { Geist, Handjet, Baloo_2, Iceberg } from "next/font/google";
 import "@/src/styles/globals.css";
 
@@ -22,7 +24,7 @@ const baloo2 = Baloo_2({
 
 const icebergFont = Iceberg({
   variable: "--font-iceberg",
-  weight: "400", // Iceberg só tem peso 400
+  weight: "400", 
   subsets: ["latin"],
 });
 
@@ -41,7 +43,7 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${HandjetFont.variable} ${baloo2.variable} ${icebergFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <ViewTransition update="page">
-          {children}
+          <SmoothScroll>{children}</SmoothScroll>
         </ViewTransition>
       </body>
     </html>
