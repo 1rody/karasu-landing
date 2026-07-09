@@ -85,7 +85,6 @@ export default function AboutSection() {
                         </div>
                     </div>
 
-                    {/* Subseções — as três frentes */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
                         <div className="flex flex-col gap-3 border-t border-(--background)/20 pt-6">
                             <span className="text-xs uppercase tracking-[0.2em] text-(--background)/50">01 — Offensive Security</span>
