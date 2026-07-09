@@ -60,10 +60,6 @@ export default function ContactSection() {
     return (
         <section id="contact" className="w-full flex flex-col items-center py-16 md:py-24 px-4">
             <div className="hidden md:flex flex-col items-center w-full">
-                <div className="w-full max-w-7xl flex justify-between items-center gap-5 px-[10%] mb-4">
-                    <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="dark:invert-100 select-none" />
-                    <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="dark:invert-100 select-none" />
-                </div>
 
                 <div className="relative w-full max-w-7xl aspect-[1532/801]">
                     <img
