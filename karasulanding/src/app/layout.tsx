@@ -3,7 +3,7 @@ import { ViewTransition } from 'react'
 
 import SmoothScroll from '@/src/components/ui/smoothScroll';
 
-import { Geist, Handjet, Baloo_2, Iceberg } from "next/font/google";
+import { Geist, Handjet, Baloo_2, Iceberg, Libre_Barcode_39 } from "next/font/google";
 import "@/src/styles/globals.css";
 
 const geistSans = Geist({
@@ -24,7 +24,13 @@ const baloo2 = Baloo_2({
 
 const icebergFont = Iceberg({
   variable: "--font-iceberg",
-  weight: "400", 
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const barcodeFont = Libre_Barcode_39({
+  variable: "--font-barcode",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -40,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${HandjetFont.variable} ${baloo2.variable} ${icebergFont.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${HandjetFont.variable} ${baloo2.variable} ${icebergFont.variable} ${barcodeFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <ViewTransition update="page">
           <SmoothScroll>{children}</SmoothScroll>
