@@ -28,7 +28,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between border-b border-(--background)/15 pb-12">
                     <div className="flex flex-col gap-4 max-w-xl">
                         <span className="text-xs uppercase tracking-[0.3em] text-(--background)/50">
-                            — One crow, three fronts
+                            ONE RAVEN, THREE FRONTS
                         </span>
                     <div className="relative justify-center mb-5  h-8">
                             <img src="/assets/icons/LogoDark.svg" alt="karasu" width={120} height={32} className="hidden dark:block" />
