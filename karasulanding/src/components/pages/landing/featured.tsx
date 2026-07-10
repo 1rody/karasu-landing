@@ -75,7 +75,7 @@ export default function Featured() {
 
     return (
         <>
-            <section className=" w-full overflow-hidden items-center flex flex-col">
+            <section id="services" className=" w-full overflow-hidden items-center flex flex-col">
                     <img className=" dark:hidden" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
                     <img className="hidden dark:block" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
                 <div className="flex flex-col -mt-3 sm:-mt-10 md:-mt-25 z-10 p-6 md:p-10 w-full text-left bg-(--foreground)">
@@ -89,8 +89,8 @@ export default function Featured() {
                                     Offensive and defensive operations that shield your company before, during and <br className="hidden md:block" /> after every attack.
                                 </p>
                                 <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-5 mt-6 md:mt-10">
-                                    <button className="primary-btn"><Link href="/get-started">BOOK A BRIEFING </Link></button>
-                                    <Link className="tertiary-btn font-bold" href="/get-started">SEE MORE →</Link>
+                                    <button className="primary-btn"><Link href="#contact">BOOK A BRIEFING </Link></button>
+                                    <Link className="tertiary-btn font-bold" href="#about">SEE MORE →</Link>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 export default function AboutSection() {
     return (
         <>
-            <section className="mt-20 w-full max-w-[2000px] mx-auto relative justify-center flex-col gap-10 items-center flex">
+            <section id="about" className="mt-20 w-full max-w-[2000px] mx-auto relative justify-center flex-col gap-10 items-center flex">
                 <div className="flex mb-30 gap-10 flex-col justify-between p-6 md:p-10 w-[90%] min-h-[85vh] m-5 bg-(--foreground) rounded-2xl text-left text-(--background)">
                     <div className="flex justify-between gap-5 items-center">
                         <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="dark:invert-100 select-none" />

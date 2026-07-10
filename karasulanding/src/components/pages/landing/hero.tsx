@@ -15,8 +15,8 @@ export default function HeroSection() {
                         </h2>
                     </div>
                     <div className="flex flex-wrap items-center gap-4 sm:gap-5 mt-8 md:mt-10">
-                        <button className="primary-btn"><Link href="/get-started">BOOK A BRIEFING </Link></button>
-                        <Link className="secondary-btn font-bold" href="/get-started">SEE MORE →</Link>
+                        <button className="primary-btn"><Link href="#contact">BOOK A BRIEFING </Link></button>
+                        <Link className="secondary-btn font-bold" href="#about">SEE MORE →</Link>
                     </div>
                 </div>
                 <div aria-hidden className="pointer-events-none">

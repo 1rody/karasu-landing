@@ -37,8 +37,21 @@ export async function POST(request: Request) {
             { status: 400 }
         );
     }
+    const nameLetters = (fullName.match(/\p{L}/gu) || []).length;
+    if (nameLetters < 3 || !/^[\p{L}][\p{L}\s'.-]*$/u.test(fullName)) {
+        return NextResponse.json({ error: "Invalid name." }, { status: 400 });
+    }
     if (!emailRegex.test(email)) {
         return NextResponse.json({ error: "Invalid email." }, { status: 400 });
+    }
+    if (phone) {
+        const digits = phone.replace(/\D/g, "");
+        if (digits.length < 8 || digits.length > 20) {
+            return NextResponse.json({ error: "Invalid phone number." }, { status: 400 });
+        }
+    }
+    if (message.length < 10) {
+        return NextResponse.json({ error: "Message too short." }, { status: 400 });
     }
     if (message.length > 2000 || fullName.length > 256) {
         return NextResponse.json({ error: "Message too long." }, { status: 400 });
