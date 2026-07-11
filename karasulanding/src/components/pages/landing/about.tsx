@@ -4,8 +4,7 @@ export default function AboutSection() {
             <section id="about" className="mt-20 w-full max-w-[2000px] mx-auto relative justify-center flex-col gap-10 items-center flex">
                 <div className="flex mb-30 gap-10 flex-col justify-between p-6 md:p-10 w-[90%] min-h-[85vh] m-5 bg-(--foreground) rounded-2xl text-left text-(--background)">
                     <div className="flex justify-between gap-5 items-center">
-                        <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="dark:invert-100 select-none" />
-                        <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="dark:invert-100 select-none" />
+                        <img src="/assets/misc/assets-2.svg" alt="karasu" width={120} height={32} className="dark:invert-100 select-none" />
                     </div>
                     <div className="flex flex-col md:flex-row gap-8 md:gap-10 justify-between items-start">
                         <div className="w-full md:w-1/2">
@@ -15,20 +14,14 @@ export default function AboutSection() {
                                 <p>
                                     Karasu is an offensive and defensive cybersecurity firm led by hands-on
                                     practitioners. We approach every engagement from the perspective of a real
-                                    adversary, combining red team operations, continuous monitoring and threat
+                                    adversary, combining red and blue team operations, continuous monitoring and threat
                                     intelligence into a single, coordinated security posture.
                                 </p>
                                 <p>
-                                    Each engagement begins with structured reconnaissance and concludes with measurable
-                                    hardening. We deliver clear, evidence-based findings and validated proof of
-                                    exploitation, so that defensive investments are grounded in demonstrated risk rather
-                                    than assumption.
+                                    Each engagement begins with structured reconnaissance, thoroughly exploration, and concludes with measurable hardening. We deliver clear, evidence-based findings and validated proof of exploitation, so that defensive investments are grounded in demonstrated risk rather than assumption.
                                 </p>
                                 <p>
-                                    Our team holds industry-recognized certifications and operates under strict rules of
-                                    engagement, aligning every assessment with frameworks such as MITRE ATT&amp;CK, OWASP
-                                    and the NIST Cybersecurity Framework. The result is security work that is
-                                    repeatable, auditable and defensible to both technical teams and leadership.
+                                   Our team holds industry-recognized certifications and operates under strict rules of engagement, aligning every assessment with frameworks such as MITRE ATT&CK, OWASP, NIST, and LGPD/GDPR. The result is security work that is repeatable, auditable and defensible to both technical teams and leadership.
                                 </p>
                             </article>
                         </div>
@@ -120,7 +113,7 @@ export default function AboutSection() {
                             className="w-full h-auto max-w-3xl"
                             height={100}
                             width={800}
-                            src="/assets/misc/Certifications.png"
+                            src="/assets/misc/Certifications.svg"
                             alt="Certifications"
                         />
                     </div>

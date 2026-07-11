@@ -82,7 +82,7 @@ export default function Featured() {
                     <div className="flex flex-col md:flex-row mb-16 md:mb-40 gap-8 md:gap-4 w-full p-2 md:p-5 justify-around items-center">
                         <h2 className="text-(--background) text-2xl font-bold text-center md:text-left">WHAT WE OPERATE</h2>
                         <div className="flex gap-2 justify-center items-center">
-                            <img src="/assets/misc/assets-2.png" alt="karasu" width={120} height={32} className="hidden sm:block dark:invert-100 -mt-15 -mr-10 select-none" />
+                        <img src="/assets/misc/assets-2.svg" alt="karasu" width={120} height={32} className="dark:invert-100 select-none" />
                             <div>
                                 <img src="/assets/misc/assets-1.png" alt="karasu" width={120} height={32} className="dark:invert-100 mx-auto md:mx-0 md:ml-auto block select-none" />
                                 <p className="text-(--background) text-base sm:text-lg md:text-xl text-center md:text-right font-bold">
