@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const SYMBOLS = "@#$%&*!?/<>=+".split("");
 const SELECTOR = ".primary-btn, .secondary-btn, .tertiary-btn";
 
-const FRAME_MS = 45;
+const FRAME_MS = 15;
 const FRAMES_PER_CHAR = 2;
 
 export default function GlitchButtons() {
