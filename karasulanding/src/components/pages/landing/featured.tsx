@@ -126,8 +126,8 @@ export default function Featured() {
                         </div>
                     </div>
                 </div>
-                    <img className=" dark:hidden -mt-4 sm:-mt-22 md:-mt-30 z-2 relative w-full" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
-                    <img className="hidden dark:block -mt-4 sm:-mt-22 md:-mt-30 z-2 relative w-full" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
+                    <img className=" dark:hidden -mt-4 sm:-mt-12 md:-mt-20 z-2 relative w-full" width={1000} height={52} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
+                    <img className="hidden dark:block -mt-4 sm:-mt-12 md:-mt-20 z-2 relative w-full" width={1000} height={52} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
             </section>
         </>
     )

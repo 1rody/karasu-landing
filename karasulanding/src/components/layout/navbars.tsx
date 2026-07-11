@@ -50,10 +50,7 @@ export default function NavLanding() {
 
             <nav className="w-full flex items-center justify-between font-(family-name:--font-Handjet)">
                 <span className="select-none text-lg hidden md:flex lg:flex sm:flex">—</span>
-                <div className="relative flex items-center justify-center md:hidden h-8">
-                    <img src="/assets/icons/karasuDarkSolid.png" alt="karasu" width={32} height={32} className="dark:hidden" />
-                    <img src="/assets/icons/karasuLightSolid.png" alt="karasu" width={32} height={32} className="hidden dark:block" />
-                </div>
+
                 <div className="relative items-center justify-center min-w-[120px] hidden md:flex lg:flex sm:flex h-8">
                     <AnimatePresence mode="wait" initial={false}>
                         {!scrolled ? (
@@ -85,7 +82,7 @@ export default function NavLanding() {
                         )}
                     </AnimatePresence>
                 </div>
-                <div className="flex items-center gap-6 px-10 py-3 [clip-path:polygon(6%_0,94%_0,100%_100%,0_100%)]">
+                <div className="flex items-center gap-6  [clip-path:polygon(6%_0,94%_0,100%_100%,0_100%)]">
                     <span className="select-none">—</span>
                     <Link href="#about" onClick={(e) => scrollTo(e, "#about")} className="text-lg uppercase tracking-wider">About</Link>
                     <Link href="#services" onClick={(e) => scrollTo(e, "#services")} className="text-lg uppercase tracking-wider">Services</Link>
