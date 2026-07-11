@@ -76,8 +76,8 @@ export default function Featured() {
     return (
         <>
             <section id="services" className=" w-full overflow-hidden items-center flex flex-col">
-                    <img className=" dark:hidden" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
-                    <img className="hidden dark:block" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
+                    <img className=" dark:hidden w-full" width={100000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
+                    <img className="hidden dark:block w-full" width={100000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
                 <div className="flex flex-col -mt-3 sm:-mt-10 md:-mt-25 z-10 p-6 md:p-10 w-full text-left bg-(--foreground)">
                     <div className="flex flex-col md:flex-row mb-16 md:mb-40 gap-8 md:gap-4 w-full p-2 md:p-5 justify-around items-center">
                         <h2 className="text-(--background) text-2xl font-bold text-center md:text-left">WHAT WE OPERATE</h2>
@@ -126,8 +126,8 @@ export default function Featured() {
                         </div>
                     </div>
                 </div>
-                    <img className=" dark:hidden -mt-4 sm:-mt-12 md:-mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
-                    <img className="hidden dark:block -mt-4 sm:-mt-12 md:-mt-30 z-2 relative" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
+                    <img className=" dark:hidden -mt-4 sm:-mt-22 md:-mt-30 z-2 relative w-full" width={4000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
+                    <img className="hidden dark:block -mt-4 sm:-mt-22 md:-mt-30 z-2 relative w-full" width={4000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
             </section>
         </>
     )
