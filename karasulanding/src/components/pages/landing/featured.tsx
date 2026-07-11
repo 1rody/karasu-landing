@@ -41,7 +41,7 @@ const cards = [
     },
 ];
 
-const CARD_BG_DARK = "/assets/backgrounds/CardkDark.svg";
+const CARD_BG_DARK = "/assets/backgrounds/CardDark.svg";
 const CARD_BG_LIGHT = "/assets/backgrounds/CardLight.svg";
 
 const swiperBreakpoints = {
