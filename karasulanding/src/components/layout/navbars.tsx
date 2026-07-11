@@ -30,7 +30,7 @@ export default function NavLanding() {
         <motion.header
             animate={{ height: scrolled ? 56 : 80 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="w-full z-50 fixed flex items-center justify-between px-8"
+            className="w-full z-50 fixed flex items-center justify-between p-5 px-8"
         >
             <motion.div
                 aria-hidden
