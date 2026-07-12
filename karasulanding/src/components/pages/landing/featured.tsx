@@ -62,10 +62,10 @@ export default function Featured() {
                         className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="relative z-10 flex flex-col justify-end h-full p-[7cqw] text-left">
-                        <h3 className="text-[9cqw] font-bold leading-tight text-(--foreground)">
+                        <h3 className="text-[7.5cqw] font-bold leading-tight text-(--foreground) line-clamp-1">
                             {card.title}
                         </h3>
-                        <p className="mt-[3cqw] text-[4.5cqw] leading-snug text-(--foreground)/80">
+                        <p className="mt-[2cqw] text-[3.5cqw] leading-snug text-(--foreground)/80 line-clamp-3 min-h-[10.5cqw]">
                             {card.text}
                         </p>
                     </div>
