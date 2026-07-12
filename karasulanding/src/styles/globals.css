@@ -21,7 +21,7 @@
 
 .anim-bg-selection {
     position: relative;
-    display: inline;
+    display: inline-block;
 }
 .anim-bg-selection::before {
     content: "";

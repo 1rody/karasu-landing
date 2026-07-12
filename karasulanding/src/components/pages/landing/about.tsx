@@ -110,7 +110,7 @@ export default function AboutSection() {
                     <h2 className="text-4xl font-bold">Certifications</h2>
                     <div className="flex justify-center items-center gap-5">
                         <img
-                            className="w-full h-auto max-w-3xl"
+                            className="w-full h-auto max-w-3xl grayscale opacity-75 transition duration-500 hover:grayscale-0 hover:opacity-100"
                             height={100}
                             width={800}
                             src="/assets/misc/Certifications.svg"

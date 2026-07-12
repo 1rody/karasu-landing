@@ -16,9 +16,8 @@ const services = [
 ];
 
 const socials = [
-    { label: "LinkedIn", href: "#" },
-    { label: "GitHub", href: "#" },
-    { label: "X", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/karasu-cybersec/" },
+    { label: "Instagram", href: "https://www.instagram.com/karasucybersec/" },
 ];
 
 export default function Footer() {

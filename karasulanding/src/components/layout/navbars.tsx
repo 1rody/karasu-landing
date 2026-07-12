@@ -83,7 +83,7 @@ export default function NavLanding() {
                     </AnimatePresence>
                 </div>
                 <div className="flex items-center gap-6  [clip-path:polygon(6%_0,94%_0,100%_100%,0_100%)]">
-                    <span className="select-none">—</span>
+                    <span className="select-none text-lg">—</span>
                     <Link href="#about" onClick={(e) => scrollTo(e, "#about")} className="text-lg uppercase tracking-wider">About</Link>
                     <Link href="#services" onClick={(e) => scrollTo(e, "#services")} className="text-lg uppercase tracking-wider">Services</Link>
                     <Link href="#contact" onClick={(e) => scrollTo(e, "#contact")} className="text-lg uppercase tracking-wider">Contact</Link>

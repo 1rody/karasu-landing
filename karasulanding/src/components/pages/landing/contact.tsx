@@ -196,7 +196,7 @@ export default function ContactSection() {
                 <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 font-semibold bg-(--hilight-purple) border-b-4 border-(--dark-purple) transition duration-200 hover:brightness-110 hover:mt-[7px] hover:border-b-2 active:mt-[7px] active:border-b-2 disabled:opacity-60 disabled:pointer-events-none"
+                    className="primary-btn inline-flex items-center gap-2 disabled:opacity-60 disabled:pointer-events-none"
                 >
                     {status === "sending" ? "SENDING…" : "SEND"} <span aria-hidden>→</span>
                 </button>
@@ -208,7 +208,7 @@ export default function ContactSection() {
         <section id="contact" className="w-full flex flex-col items-center py-16 md:py-24 px-4">
             <div className="hidden md:flex flex-col items-center w-full">
 
-                <div className="relative w-full max-w-7xl aspect-[1532/801]">
+                <div className="relative w-full max-w-7xl">
                     <img
                         src="/assets/backgrounds/KarasuDarkBars.svg"
                         alt="Karasu barcode"
@@ -216,12 +216,12 @@ export default function ContactSection() {
                         className="absolute -left-8 top-1/2 -translate-y-1/2 z-10 h-[45%] w-auto object-contain invert dark:invert-0 opacity-90 select-none pointer-events-none"
                     />
                     <img src="/assets/backgrounds/KarasuContactDark.svg" alt=""
-                        className="absolute inset-0 w-full h-full object-contain dark:hidden select-none" />
+                        className="absolute inset-0 w-full h-full object-fill dark:hidden select-none" />
                     <img src="/assets/backgrounds/KarasuContactLight.svg" alt=""
-                        className="absolute inset-0 w-full h-full object-contain hidden dark:block select-none" />
+                        className="absolute inset-0 w-full h-full object-fill hidden dark:block select-none" />
 
-                    <div className="absolute top-[21%] left-[14.7%] right-[14.2%] bottom-[9%] flex items-start justify-center text-(--background)">
-                        <div className="w-[92%] max-w-2xl flex flex-col">
+                    <div className="relative flex justify-center px-[14.5%] pt-[15%] pb-[11%] text-(--background)">
+                        <div className="w-full max-w-2xl flex flex-col">
                             <span className="text-[0.7rem] uppercase tracking-[0.3em] opacity-50">— Get in touch</span>
                             <h2 className="text-2xl lg:text-3xl font-bold font-(family-name:--font-Handjet)">
                                 Contact our consultants

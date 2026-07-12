@@ -20,8 +20,8 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <div aria-hidden className="pointer-events-none">
-                    <img className="absolute top-[25%] sm:top-0 -right-60 sm:-right-80 lg:-right-110 w-[130vw] max-w-none sm:w-auto dark:hidden" src="/assets/backgrounds/Crow_light.png" alt="Hero Crow" />
-                    <img className="absolute top-[25%] sm:top-0 -right-60 sm:-right-80 lg:-right-110 w-[130vw] max-w-none sm:w-auto hidden dark:block" src="/assets/backgrounds/Crow_dark.png" alt="Hero Crow" />
+                    <img className="absolute top-[25%] sm:top-1/2 sm:-translate-y-1/2 -right-40 sm:-right-44 lg:-right-56 w-[115vw] max-w-none sm:w-auto sm:max-h-[85vh] lg:max-h-[90vh] object-contain dark:hidden" src="/assets/backgrounds/Crow_light.png" alt="Hero Crow" />
+                    <img className="absolute top-[25%] sm:top-1/2 sm:-translate-y-1/2 -right-40 sm:-right-44 lg:-right-56 w-[115vw] max-w-none sm:w-auto sm:max-h-[85vh] lg:max-h-[90vh] object-contain hidden dark:block" src="/assets/backgrounds/Crow_dark.png" alt="Hero Crow" />
                 </div>
             </section>
         </>
