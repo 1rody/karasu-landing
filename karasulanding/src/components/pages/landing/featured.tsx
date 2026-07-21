@@ -79,12 +79,11 @@ export default function Featured() {
                     <img className=" dark:hidden w-full" width={100000} height={32} src="/assets/backgrounds/transition_dark.svg" alt="Hero Crow" />
                     <img className="hidden dark:block w-full" width={100000} height={32} src="/assets/backgrounds/transition_light.svg" alt="Hero Crow" />
                 <div className="flex flex-col -mt-3 sm:-mt-10 md:-mt-25 z-10 p-6 md:p-10 w-full text-left bg-(--foreground)">
-                    <div className="flex flex-col md:flex-row mb-16 md:mb-40 gap-8 md:gap-4 w-full p-2 md:p-5 justify-around items-center">
+                    <div className="flex flex-col md:flex-row mb-16 md:mb-40 gap-8 md:gap-4 w-full p-2 md:p-5 justify-around ">
                         <h2 className="text-(--background) text-2xl font-bold text-center md:text-left">WHAT WE OPERATE</h2>
                         <div className="flex gap-2 justify-center items-center">
-                        <img src="/assets/misc/assets-2.svg" alt="karasu" width={120} height={32} className="dark:invert-100 select-none hidden md:flex lg:flex" />
+                        <img src="/assets/misc/assets-2.svg" alt="karasu" width={120} height={32} className="dark:invert-100 mb-24 select-none hidden md:flex lg:flex" />
                             <div>
-                                <img src="/assets/misc/assets-1.png" alt="karasu" width={120} height={32} className="dark:invert-100 mx-auto md:mx-0 md:ml-auto block select-none" />
                                 <p className="text-(--background) text-base sm:text-lg md:text-xl text-center md:text-right font-bold">
                                     Offensive and defensive operations that shield your company before, during and <br className="hidden md:block" /> after every attack.
                                 </p>
