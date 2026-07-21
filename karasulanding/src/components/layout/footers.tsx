@@ -96,7 +96,6 @@ export default function Footer() {
                         <a href="mailto:contact@karasu.sh" className="text-sm transition-opacity hover:opacity-60 break-all">
                             contact@karasu.sh
                         </a>
-                        <p className="text-sm text-(--background)/70">Available 24/7 for incident response.</p>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-t border-(--background)/15 pt-8 text-xs text-(--background)/50">
